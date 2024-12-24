@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư mời tham dự</title>
+    <style>
+        /* Reset mặc định */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            background: url('./thứ bảy.png') no-repeat center center fixed;
+            background-size: contain;
+            background-position: center;
+            background-attachment: fixed;
+            color: #002366;
+            text-align: center;
+            padding: 1rem;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        /* Nút xác nhận tham gia */
+        button {
+            background: #002366;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background: #001244;
+        }
+
+        /* Form điền thông tin */
+        .name-form {
+            margin-bottom: 20px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            width: 30%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .name-form input, .name-form textarea {
+            padding: 0.75rem;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 2px solid #002366;
+            width: 100%;
+            margin-top: 8px;
+            box-sizing: border-box;
+        }
+
+        .name-form label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #002366;
+            display: block;
+        }
+
+        .name-form button {
+            background: #28a745;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: auto;
+        }
+
+        .name-form button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <!-- Nút xác nhận tham gia -->
+    <button onclick="showNameForm()">Xác nhận tham gia</button>
+
+    <!-- Form điền thông tin -->
+    <form class="name-form" id="nameForm" action="https://formspree.io/f/xannnqrq" method="POST">
+        <label for="name">Tên của bạn:</label>
+        <input type="text" id="name" name="name" placeholder="Tên của bạn" required>
+
+        <label for="email">Email của bạn:</label>
+        <input type="email" id="email" name="email" placeholder="Email của bạn" required>
+
+        <label for="message">Lời nhắn (tuỳ chọn):</label>
+        <textarea id="message" name="message" placeholder="Lời nhắn" rows="4"></textarea>
+
+        <button type="submit">Gửi thông tin</button>
+    </form>
+
+    <script>
+        function showNameForm() {
+            // Hiển thị form điền thông tin
+            document.getElementById("nameForm").style.display = "block";
+            // Ẩn nút xác nhận
+            document.querySelector("button").style.display = "none";
+        }
+    </script>
+</body>
+</html>
